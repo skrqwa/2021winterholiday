@@ -196,14 +196,91 @@
 //		printf("大端\n");
 //	}
 //}
-union U
-{
-	char arr[6];//6
-	int i;//4
-	//要对齐，总大小是对齐数的整数倍8
-};
+//union U
+//{
+//	char arr[6];//6
+//	int i;//4
+//	//要对齐，总大小是对齐数的整数倍8
+//};
+//int main()
+//{
+//	union U u;
+//	printf("%d\n", sizeof(u));
+//}
+//struct A
+//{
+//	int a;
+//	short b;
+//	int c;
+//	char d;
+//};
+//struct B
+//{
+//	int a;
+//	short b;
+//	char c;
+//	int d;
+//};
+//typedef struct{
+//	int a;
+//	char b;
+//	short c;
+//	short d;
+//}AA_t;
+//int main()
+//{
+//	struct A a;
+//	struct B b;
+//	AA_t c;
+//	long l;
+//	printf("%d\n", sizeof(a));
+//	printf("%d\n", sizeof(b));
+//	printf("%d\n", sizeof(c));
+//	printf("%d\n", sizeof(l));
+//}
+//#pragma pack(4)/*编译选项，表示4字节对齐 平台：VS2013。语言：C语言*/
+//int main(int argc, char* argv[])
+//{
+//	struct tagTest1
+//	{
+//		short a;
+//		char d;
+//		long b;
+//		long c;
+//	};
+//	struct tagTest2
+//	{
+//		long b;
+//		short c;
+//		char d;
+//		long a;
+//	};
+//	struct tagTest3
+//	{
+//		short c;
+//		long b;
+//		char d;
+//		long a;
+//	};
+//	struct tagTest1 stT1;
+//	struct tagTest2 stT2;
+//	struct tagTest3 stT3;
+//
+//	printf("%d %d %d", sizeof(stT1), sizeof(stT2), sizeof(stT3));
+//	return 0;
+//}
+//#pragma pack()
+
 int main()
 {
-	union U u;
-	printf("%d\n", sizeof(u));
+	union
+	{
+		short k;
+		char i[2];
+	}*s, a;
+	s = &a;
+	s->i[0] = 0x39;
+	s->i[1] = 0x38;
+	printf("%x\n", a.k);
+	return 0;
 }
