@@ -39,7 +39,7 @@ void DisplayBoard(char board[ROWS][COLS], int row, int col)
 	{
 		if (i == 0)
 		{
-			printf("---");
+			printf("  -");
 		}
 		else if (i == row )
 		{
@@ -78,7 +78,7 @@ void DisplayBoard(char board[ROWS][COLS], int row, int col)
 		{
 			if (j == 0)
 			{
-				printf("---");
+				printf("  -");
 			}
 			else if (j == col)
 			{

@@ -1,4 +1,8 @@
 #define _CRT_SECURE_NO_WARNINGS 1
+
+#ifndef _GAME_H_
+#define _GAME_H_
+
 #include<stdio.h>
 #include<time.h>
 #include<stdlib.h>
@@ -21,3 +25,5 @@ void SetMine(char mine[ROWS][COLS], int row, int col,int count);
 
 //ÅÅ²éÀ×
 void FindMine(char mine[ROWS][COLS],char show[ROWS][COLS], int row, int col);
+
+#endif //__GAME_H_
