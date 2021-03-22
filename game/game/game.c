@@ -141,6 +141,7 @@ int GetMine(char mine[ROWS][COLS], int x, int y)
 
 void SetBlank(char show[ROWS][COLS], char mine[ROWS][COLS], int x, int y)
 {
+	
 	int count = GetMine(mine, x, y);
 	if (count == 0)
 	{
@@ -153,6 +154,24 @@ void SetBlank(char show[ROWS][COLS], char mine[ROWS][COLS], int x, int y)
 			SetBlank(show, mine, x, y - 1);
 		if (x >= 0 && x <= ROW && y + 1 >= 0 && y + 1 <= COL && show[x][y + 1] == '*')
 			SetBlank(show, mine, x, y + 1);
+	
+		//ÓÃÑ­»·Ð´
+	/*	int i = 0;
+		int j = 0;
+		for (i = x - 1; x <= x + 1; i++)
+		{
+			
+			for (j = y - 1; j <= y + 1; j++) 
+			{
+				if (i > 0 && i <= ROW && j > 0 && j <= COL && show[i][j] == '*')
+				{
+					SetBlank(show, mine, i, j);
+				}
+			
+			}
+		}*/
+
+
 	}
 	else
 	{
